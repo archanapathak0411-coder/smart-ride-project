@@ -1,16 +1,15 @@
 buildscript {
     ext {
-        buildToolsVersion = "36.1.0"
+        buildToolsVersion = "35.0.0"
         minSdkVersion = 24
-        compileSdkVersion = 36
-        targetSdkVersion = 36
-        ndkVersion = "29.0.13113456"
+        compileSdkVersion = 35
+        targetSdkVersion = 34
+        ndkVersion = "27.1.12297006"
         kotlinVersion = "2.0.21"
     }
     repositories {
-         maven {
-            url=uri("https://maven.lssdginternal.com/repository/maven-group/");
-        }
+        google()
+        mavenCentral()
     }
     dependencies {
         classpath("com.android.tools.build:gradle")
