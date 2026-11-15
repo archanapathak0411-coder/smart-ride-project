@@ -1,20 +1,6 @@
-pluginManagement {
-    repositories {
-        maven {
-            url "https://maven.lssdginternal.com/repository/maven-group/";
-        }
-
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
-    repositories {
-        maven {
-            url "https://maven.lssdginternal.com/repository/maven-group/";
-        }
-    }
-}
-rootProject.name = 'JcSmartRide'
-apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
+plugins { id("com.facebook.react.settings") }
+extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+rootProject.name = 'TestProjectCheck'
 include ':app'
-includeBuild('../gradle-plugin')
+includeBuild('../node_modules/@react-native/gradle-plugin')
