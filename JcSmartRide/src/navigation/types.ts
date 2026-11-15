@@ -9,7 +9,7 @@ export type SearchBody = {
 
 export type RootStack = {
   Home: undefined;
-  Login: undefined;
+  Login: { search?: SearchBody; next?: "Offer"; checkStatus?: boolean } | undefined;
   Register: undefined;
   Find: undefined;
   Offer: undefined;
