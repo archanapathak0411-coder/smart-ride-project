@@ -1,0 +1,39 @@
+1. INTRODUCTION
+JC Smart Ride is a smart campus carpooling web application proposed for the students
+of J.C. Bose University of Science and Technology, YMCA, Faridabad. Its main
+purpose is to help students travelling on similar routes and at similar times find suitable
+carpooling partners.
+The system has two main users: Driver and Passenger. Drivers can add ride details such
+as pickup location, destination, date, time, available seats, and cost-sharing information.
+Passengers can search for rides based on their source, destination, date, and preferred
+time.A Smart Match module analyzes available rides and provides a matching score to
+recommend the most suitable ride. The project also includes a KNN-based
+recommendation system using Python and Scikit-learn to improve ride matching.
+The application will be developed as a responsive website for both mobile phones and
+laptops, using React.js for the frontend, Python Flask for the backend, MySQL for the
+database, and Python/Scikit-learn for smart recommendations.
+The main objective of JC Smart Ride is to reduce travel costs, utilize empty vehicle
+seats efficiently, reduce unnecessary vehicle movement, and provide a safe and
+organized university-specific carpooling platform..
+2. PROBLEM IDENTIFICATION AND MOTIVATION
+Students often travel to and from the university through similar routes but may not
+know which other students are travelling at the same time. Students with cars may have
+empty seats, while students without a vehicle may need an affordable and convenient
+ride. Informal methods such as asking friends or sending messages in groups do not
+provide a proper search, matching, booking and ride-management system.
+The major problems identified for the proposed project are:
+• Difficulty in finding a ride that matches the required pickup location, destination
+and time.
+• Unused seats in private vehicles while travelling to the university or back home.
+• Higher individual travel cost when students travel alone.
+• Lack of a university-focused platform for organized ride sharing.
+2
+• Difficulty comparing multiple available rides on route, time, distance, cost and
+seat availability.
+• Limited safety and trust when users do not have a proper student verification
+mechanism.
+• No single place to manage upcoming rides, completed rides, cancelled rides and
+ride requests.
+These problems motivate the development of JC Smart Ride as a simple but expandable
+campus mobility system that connects students with suitable rides while keeping the
+process organized and easier to manage.

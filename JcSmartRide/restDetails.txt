@@ -1,0 +1,106 @@
+1. OBJECTIVES OF THE PROJECT
+1.
+To develop a web-based smart carpooling platform specifically for university
+students.
+2. To provide separate facilities for finding a ride and offering a ride.
+3. To match students on the basis of pickup location, destination and travel time.
+4. To calculate a smart matching score using multiple factors such as route
+similarity, distance, travel time, available seats, cost, user preferences and
+previous ride behaviour.
+5.
+To recommend the best available ride to a passenger instead of showing only a
+random list of rides.
+6.
+To use a KNN-based recommendation model in the second phase of the
+matching system.
+7. To provide student registration and login with verification support.
+8. To include women-only ride preference as an optional safety preference.
+9. To provide a college/student verification facility for trusted use of the platform.
+10. To provide ride booking, cancellation, acceptance/rejection and ride-history
+management.
+11.
+To include ride rating, Google Maps support and a monthly money-saved
+calculator.
+12.
+To develop a responsive interface suitable for mobile phones and laptops.
+2. PROPOSED APPLICATION PAGES AND MODULES
+The proposed system will contain the following main pages and modules, based on the
+planned application flow:
+Table 1. Proposed application pages and modules
+Page / Module
+Home Page
+Purpose
+Find Ride, Offer Ride, Login and Sign Up options, with the
+main JC Smart Ride introduction and search area.Registration Page
+Login Page
+Secure student login for accessing the application.
+Offer Ride Page
+Find Ride Page
+AI
+Smart
+Page
+My Ride Page
+Admin Panel
+Student registration using Name, Email, Phone, Password and
+Student ID.
+Driver adds pickup location, destination, date, time, available
+seats and ride cost/share amount.
+Passenger searches for a ride using source, destination, date
+and time.
+Match Shows matched rides with smart matching score and
+recommended options.
+Shows upcoming rides, completed rides and cancelled rides.
+Admin can manage and monitor students, drivers, rides and
+bookings.
+3. SMART RIDE MATCHING AND AI/ML COMPONENT
+The smart component of JC Smart Ride is designed to recommend the most suitable
+ride by comparing a passenger request with available rides. The matching system will
+not depend on only one parameter. It will consider multiple factors such as pickup
+location, drop location, travel time, route similarity, distance, number of available seats,
+cost, user preferences and previous ride behaviour.
+Phase 1 – Rule and score based matching
+The system first compares the user request with available rides. Location and
+destination similarity, time difference, distance and other ride attributes are converted
+into matching values. A combined matching score is then calculated. Higher score
+means better suitability, and the system can recommend the top matching rides.
+1Phase 2 – KNN recommendation model
+In the next stage, a K-Nearest Neighbours (KNN) recommendation model can be used
+to find rides that are similar to the passenger request. Features may include
+source/destination similarity, travel time, route distance, available seats, cost and
+selected preferences. The model can then help rank the most relevant rides.
+AI features in the proposed system
+The proposed AI-enabled part focuses on three practical functions: Smart Match Score,
+Best Ride Recommendation and Similar Travel Time Matching. These functions
+support the passenger in selecting a suitable ride from the available options.
+Example matching scenario
+A passenger may search for a ride from a nearby sector such as Sector 15 to the
+university at around 8:30 AM. A driver may offer a route from a nearby sector such as
+Sector 16 to the university at around 8:31 AM. The matching component can compare
+the route, destination, time difference and other factors and decide how suitable the ride
+is Matching logic in Phase 1 can use location + destination + travel time to produce a
+match score. In Phase 2, the KNN recommendation model can be used to recommend
+similar and suitable rides.
+4. TOOLS REQUIRED / PLATFORM USED
+Frontend – React.js: Used for the responsive web interface, pages, reusable
+components, forms and user interaction.
+Backend – Python Flask: Used for server-side logic, APIs, authentication, ride and
+booking operations.
+Database – MySQL: Used to store students, drivers, rides, bookings, ratings,
+preferences and ride history.
+AI/ML – Python + Scikit-learn: Used for the proposed smart matching and KNNbased
+recommendation component.
+Maps – Google Maps: Planned for location, route and map support.
+Development Tools: VS Code, Node.js/npm, Python environment, MySQL
+Workbench and a web browser.
+25. EXTRA / UNIQUE FEATURES
+• Admin + User Verification for better trust and controlled access.
+• Women-only ride preference for users who want this option.
+• College/Student Verification to keep the platform focused on university users.
+• Monthly Money Saved Calculator to estimate savings from shared rides.
+• Ride Rating to allow users to give feedback after a completed ride.
+• Google Maps integration for route and location support.
+• Smart Match Score for ranking suitable rides.
+• Best Ride Recommendation instead of only basic ride listing.
+• Similar Travel Time Matching for students travelling around the same time.
+• My Ride dashboard for upcoming, completed and cancelled rides.
+3

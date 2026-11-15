@@ -1,0 +1,27 @@
+# Large Archives
+*.zip
+
+# Dependencies
+**/node_modules/
+node_modules/
+
+# Build & compiled outputs
+**/build/
+**/dist/
+**/.gradle/
+**/.cxx/
+.bundle/
+
+# Python / Backend
+backend/.venv/
+backend/.vendor/
+backend/jcsmart.sqlite
+**/__pycache__/
+**/.pytest_cache/
+*.pyc
+*.pyo
+
+# System / Logs
+*.log
+.DS_Store
+Thumbs.db
