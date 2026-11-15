@@ -7,5 +7,13 @@ export const colors = {
   card: "#ffffff",
   line: "#d7e2dc",
   danger: "#9d2c2c",
+  dangerBg: "#fef2f2",
   amber: "#9a5b10",
+  amberBg: "#fffbeb",
+  okGreen: "#15803d",
+  okBg: "#dcfce7",
+  blue: "#1d4ed8",
+  blueBg: "#eff6ff",
+  purple: "#7e22ce",
+  purpleBg: "#f3e8ff",
 };

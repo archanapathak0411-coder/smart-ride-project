@@ -7,6 +7,7 @@ import { SearchBody } from "../navigation/types";
 
 type Props = {
   womenOnlyDefault?: boolean;
+  compact?: boolean;
   onSearch: (body: SearchBody) => void;
 };
 
@@ -16,12 +17,13 @@ function today() {
   return local.toISOString().slice(0, 10);
 }
 
-export default function SearchForm({ womenOnlyDefault = false, onSearch }: Props) {
+export default function SearchForm({ womenOnlyDefault = false, compact = false, onSearch }: Props) {
   const [places, setPlaces] = useState<Place[]>([]);
   const [pickup, setPickup] = useState("");
   const [drop, setDrop] = useState("");
   const [date, setDate] = useState(today());
   const [time, setTime] = useState("08:30");
+  const [maxCost, setMaxCost] = useState("");
   const [womenOnly, setWomenOnly] = useState(womenOnlyDefault);
   const [error, setError] = useState("");
 
@@ -39,6 +41,19 @@ export default function SearchForm({ womenOnlyDefault = false, onSearch }: Props
       <TextInputLike value={date} onChange={setDate} />
       <Text style={styles.label}>Time (HH:MM)</Text>
       <TextInputLike value={time} onChange={setTime} />
+      {!compact ? (
+        <>
+          <Text style={styles.label}>Maximum fare per seat (₹, optional)</Text>
+          <TextInput
+            style={styles.input}
+            value={maxCost}
+            onChangeText={setMaxCost}
+            keyboardType="decimal-pad"
+            placeholder="No limit"
+            placeholderTextColor={colors.muted}
+          />
+        </>
+      ) : null}
       <Pressable style={styles.check} onPress={() => setWomenOnly(current => !current)}>
         <Text>{womenOnly ? "☑" : "☐"} Show women-only rides only</Text>
       </Pressable>
@@ -57,6 +72,19 @@ export default function SearchForm({ womenOnlyDefault = false, onSearch }: Props
             setError("Pickup and drop must be different places.");
             return;
           }
+          const budget = maxCost.trim() ? Number(maxCost) : null;
+          if (budget !== null && (!Number.isFinite(budget) || budget < 0)) {
+            setError("Enter a valid maximum fare or leave it blank.");
+            return;
+          }
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || date < today()) {
+            setError("Choose a valid date that is today or later.");
+            return;
+          }
+          if (!/^\d{2}:\d{2}$/.test(time)) {
+            setError("Enter a valid time in HH:MM format.");
+            return;
+          }
           setError("");
           onSearch({
             pickup_place_id: pickup,
@@ -64,7 +92,7 @@ export default function SearchForm({ womenOnlyDefault = false, onSearch }: Props
             ride_date: date,
             ride_time: time,
             women_only: womenOnly,
-            max_cost: null,
+            max_cost: budget,
           });
         }}>
         <Text style={styles.buttonText}>Find rides</Text>
